@@ -4,23 +4,23 @@
 
 
   // Initialize Firebase (mine then Sarah's, mine gave me function error on firebase.database....)
-  // var config = {
-  //   apiKey: "AIzaSyCNyJq0t_GptIvG_Zn7gdxYtVg5uXDDIbc",
-  //   authDomain: "trainscheduler-db095.firebaseapp.com",
-  //   databaseURL: "https://trainscheduler-db095.firebaseio.com",
-  //   projectId: "trainscheduler-db095",
-  //   storageBucket: "trainscheduler-db095.appspot.com",
-  //   messagingSenderId: "41743044351"
-  // };
-
   var config = {
-    apiKey: "AIzaSyDxIKPAAG_mUJToJJ-VQ_HqSmabkPOV0WQ",
-    authDomain: "more-properties-ab167.firebaseapp.com",
-    databaseURL: "https://more-properties-ab167.firebaseio.com",
-    projectId: "more-properties-ab167",
-    storageBucket: "more-properties-ab167.appspot.com",
-    messagingSenderId: "216987558676"
+    apiKey: "AIzaSyCNyJq0t_GptIvG_Zn7gdxYtVg5uXDDIbc",
+    authDomain: "trainscheduler-db095.firebaseapp.com",
+    databaseURL: "https://trainscheduler-db095.firebaseio.com",
+    projectId: "trainscheduler-db095",
+    storageBucket: "trainscheduler-db095.appspot.com",
+    messagingSenderId: "41743044351"
   };
+
+  // var config = {
+  //   apiKey: "AIzaSyDxIKPAAG_mUJToJJ-VQ_HqSmabkPOV0WQ",
+  //   authDomain: "more-properties-ab167.firebaseapp.com",
+  //   databaseURL: "https://more-properties-ab167.firebaseio.com",
+  //   projectId: "more-properties-ab167",
+  //   storageBucket: "more-properties-ab167.appspot.com",
+  //   messagingSenderId: "216987558676"
+  // };
   firebase.initializeApp(config);
 
 var database = firebase.database();
@@ -49,10 +49,10 @@ database.ref().push({
 // Firebase watcher + loader
 database.ref().on("child_added", function (childSnapshot){
 
-  var newTrain = childSnapshot.val().destination;
+  var newTrain = childSnapshot.val().trainName;
   var newLocation = childSnapshot.val().destination;
-  var newFirstTrain = childSnapshot.val().destination;
-  var newFreq = childSnapshot.val().destination;
+  var newFirstTrain = childSnapshot.val().firstTrain;
+  var newFreq = childSnapshot.val().frequency;
 
   // First Time
   var startTimeConverted = moment(newFirstTrain, "hh.mm").subtract(1, "years");
@@ -76,10 +76,10 @@ var catchTrain  = moment(nextTrain).format("HH:mm");
 // Display HTML
 $("#all-display").append(
   '<tr><td>' +newTrain + 
-      '<tr><td>' + newLocation + 
-          '<tr><td>' + newFreq + 
-              '<tr><td>' + catchTrain + 
-                  '<tr><td>' + tMinutesTillTrain + '<tr><td>');
+      '</td><td>' + newLocation + 
+          '</td><td>' + newFreq + 
+              '</td><td>' + catchTrain + 
+                  '</td><td>' + tMinutesTillTrain + '</tdr></tr>');
 
 // Clear inputs
 $("#trainName, #destination, #firstTrain, #interval").val("");
