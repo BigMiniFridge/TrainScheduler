@@ -1,21 +1,29 @@
 // <!-- Javascripte -->
 
-$(document).ready(function (){
+// $(document).ready(function (){
 
 
-  // Initialize Firebase
+  // Initialize Firebase (mine then Sarah's, mine gave me function error on firebase.database....)
+  // var config = {
+  //   apiKey: "AIzaSyCNyJq0t_GptIvG_Zn7gdxYtVg5uXDDIbc",
+  //   authDomain: "trainscheduler-db095.firebaseapp.com",
+  //   databaseURL: "https://trainscheduler-db095.firebaseio.com",
+  //   projectId: "trainscheduler-db095",
+  //   storageBucket: "trainscheduler-db095.appspot.com",
+  //   messagingSenderId: "41743044351"
+  // };
+
   var config = {
-    apiKey: "AIzaSyChN8UuY2IMI-7ufVd_6_nD5oh30NsF7o4",
-    authDomain: "trainscheduler-c885c.firebaseapp.com",
-    databaseURL: "https://trainscheduler-c885c.firebaseio.com",
-    projectId: "trainscheduler-c885c",
-    storageBucket: "trainscheduler-c885c.appspot.com",
-    messagingSenderId: "997387929610"
+    apiKey: "AIzaSyDxIKPAAG_mUJToJJ-VQ_HqSmabkPOV0WQ",
+    authDomain: "more-properties-ab167.firebaseapp.com",
+    databaseURL: "https://more-properties-ab167.firebaseio.com",
+    projectId: "more-properties-ab167",
+    storageBucket: "more-properties-ab167.appspot.com",
+    messagingSenderId: "216987558676"
   };
-
   firebase.initializeApp(config);
-  
-  var database = firebase.database();
+
+var database = firebase.database();
 
 // Capture button click
 
@@ -83,5 +91,5 @@ function (errorObject) {
   console.log("Errors handled:" + errorObject.code);
 });
 
-});
+// });
 
