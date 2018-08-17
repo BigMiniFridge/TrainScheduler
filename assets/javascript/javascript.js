@@ -1,9 +1,9 @@
 // <!-- Javascripte -->
 
-// $(document).ready(function (){
+$(document).ready(function (){
 
 
-  // Initialize Firebase (mine then Sarah's, mine gave me function error on firebase.database....)
+  // Initialize Firebase 
   var config = {
     apiKey: "AIzaSyCNyJq0t_GptIvG_Zn7gdxYtVg5uXDDIbc",
     authDomain: "trainscheduler-db095.firebaseapp.com",
@@ -13,14 +13,6 @@
     messagingSenderId: "41743044351"
   };
 
-  // var config = {
-  //   apiKey: "AIzaSyDxIKPAAG_mUJToJJ-VQ_HqSmabkPOV0WQ",
-  //   authDomain: "more-properties-ab167.firebaseapp.com",
-  //   databaseURL: "https://more-properties-ab167.firebaseio.com",
-  //   projectId: "more-properties-ab167",
-  //   storageBucket: "more-properties-ab167.appspot.com",
-  //   messagingSenderId: "216987558676"
-  // };
   firebase.initializeApp(config);
 
 var database = firebase.database();
@@ -91,5 +83,5 @@ function (errorObject) {
   console.log("Errors handled:" + errorObject.code);
 });
 
-// });
+});
 
