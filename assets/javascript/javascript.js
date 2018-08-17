@@ -4,7 +4,17 @@ $(document).ready(function (){
 
 
   // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyChN8UuY2IMI-7ufVd_6_nD5oh30NsF7o4",
+    authDomain: "trainscheduler-c885c.firebaseapp.com",
+    databaseURL: "https://trainscheduler-c885c.firebaseio.com",
+    projectId: "trainscheduler-c885c",
+    storageBucket: "trainscheduler-c885c.appspot.com",
+    messagingSenderId: "997387929610"
+  };
 
+  firebase.initializeApp(config);
+  
   var database = firebase.database();
 
 // Capture button click
